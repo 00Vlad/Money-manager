@@ -1,19 +1,29 @@
 <template>
-  <ul class="sidenav app-sidenav open">
-    <li>
-      <router-link to="/" class="waves-effect waves-orange pointer">Cash account</router-link>
-    </li>
-    <li>
-      <router-link to="/history" class="waves-effect waves-orange pointer">History</router-link>
-    </li>
-    <li>
-      <router-link to="/planning" class="waves-effect waves-orange pointer">Planning</router-link>
-    </li>
-    <li>
-      <router-link to="/record" class="waves-effect waves-orange pointer">New record</router-link>
-    </li>
-    <li>
-      <router-link to="/categories" class="waves-effect waves-orange pointer">Categories</router-link>
-    </li>
+  <ul class="sidenav app-sidenav" :class="{open: value}">
+    <router-link
+      v-for="link of navbarLinks"
+      :key="link.path"
+      tag="li"
+      active-class="active"
+      :exact="link.exact"
+      :to="link.path"
+    >
+      <a href='#' class="waves-effect waves-orange pointer">{{ link.title }}</a>
+    </router-link>
   </ul>
 </template>
+
+<script>
+export default {
+  props: ['value'],
+  data: () => ({
+    navbarLinks: [
+      { title: 'Cash account', path: '/', exact: true },
+      { title: 'History', path: '/history' },
+      { title: 'Planning', path: '/planning' },
+      { title: 'New record', path: '/record' },
+      { title: 'Categories', path: '/categories' }
+    ]
+  })
+}
+</script>
