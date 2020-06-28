@@ -1,28 +1,28 @@
 <template>
-  <div>
+  <div class="app-content-categories">
     <div class="page-title">
-      <h3>Категории</h3>
+      <h3>Categories</h3>
     </div>
     <section>
       <div class="row">
         <div class="col s12 m6">
           <div>
             <div class="page-subtitle">
-              <h4>Создать</h4>
+              <h4>Create</h4>
             </div>
             <form>
               <div class="input-field">
                 <input id="name" type="text" />
-                <label for="name">Название</label>
-                <span class="helper-text invalid">Введите название</span>
+                <label for="name">Title</label>
+                <span class="helper-text invalid">Enter the title</span>
               </div>
               <div class="input-field">
                 <input id="limit" type="number" />
-                <label for="limit">Лимит</label>
-                <span class="helper-text invalid">Минимальная величина</span>
+                <label for="limit">Limit</label>
+                <span class="helper-text invalid">Minimum value</span>
               </div>
               <button class="btn waves-effect waves-light" type="submit">
-                Создать
+                Create
                 <i class="material-icons right">send</i>
               </button>
             </form>
@@ -31,27 +31,27 @@
         <div class="col s12 m6">
           <div>
             <div class="page-subtitle">
-              <h4>Редактировать</h4>
+              <h4>Edit</h4>
             </div>
             <form>
               <div class="input-field">
                 <select>
                   <option>Category</option>
                 </select>
-                <label>Выберите категорию</label>
+                <label>Choose category</label>
               </div>
               <div class="input-field">
                 <input type="text" id="name" />
-                <label for="name">Название</label>
-                <span class="helper-text invalid">TITLE</span>
+                <label for="name">Title</label>
+                <span class="helper-text invalid">Title</span>
               </div>
               <div class="input-field">
                 <input id="limit" type="number" />
-                <label for="limit">Лимит</label>
-                <span class="helper-text invalid">LIMIT</span>
+                <label for="limit">Limit</label>
+                <span class="helper-text invalid">Limit</span>
               </div>
               <button class="btn waves-effect waves-light" type="submit">
-                Обновить
+                Refresh
                 <i class="material-icons right">send</i>
               </button>
             </form>
