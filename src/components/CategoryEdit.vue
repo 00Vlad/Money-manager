@@ -24,7 +24,8 @@
           <span
             v-if="$v.title.$dirty && !$v.title.required"
             class="helper-text invalid"
-          >Enter the title of category</span>
+          >Enter the title of category
+          </span>
         </div>
 
         <div class="input-field">
@@ -38,7 +39,8 @@
           <span
             v-if="$v.limit.$dirty && !$v.limit.minValue"
             class="helper-text invalid"
-          >Minimum value {{ $v.limit.$params.minValue.min }}</span>
+          >Minimum value {{ $v.limit.$params.minValue.min }}
+          </span>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">
