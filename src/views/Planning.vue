@@ -8,9 +8,7 @@
         </div>
 
         <Loader v-if="loading"/>
-
         <p v-else-if="!categories.length" class="center">There are no categories. <router-link to="/categories">Create new category</router-link></p>
-
         <section v-else>
           <div v-for="cat of categories" :key="cat.id">
             <p>
@@ -25,6 +23,7 @@
             </div>
           </div>
         </section>
+
       </div>
     </div>
   </main>
