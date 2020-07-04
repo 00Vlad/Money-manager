@@ -3,7 +3,7 @@
     <div class="app-page">
       <div>
         <div class="page-title">
-          <h3>Categories</h3>
+          <h3>{{ 'Categories' | localize }}</h3>
         </div>
 
         <section>

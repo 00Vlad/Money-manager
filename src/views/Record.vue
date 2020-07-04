@@ -3,12 +3,12 @@
     <div class="app-page">
       <div>
         <div class="page-title">
-          <h3>New Record</h3>
+          <h3>{{ 'Record' | localize }}</h3>
         </div>
 
         <Loader v-if="loading" />
 
-        <p v-else-if="!categories.length" class="center">There are no cetegories. <router-link to="/categories">Create new category</router-link></p>
+        <p v-else-if="!categories.length" class="center">{{ 'Record_NoCategories' | localize }} <router-link to="/categories">{{ 'Record_CreateCategory' | localize }}</router-link></p>
 
         <form v-else class="form" @submit.prevent='handleSubmit'>
           <div class="input-field">
@@ -19,14 +19,14 @@
                 :value="c.id"
               >{{ c.title }}</option>
             </select>
-            <label>Choose category</label>
+            <label>{{ 'Record_ChooseCategory' | localize }}</label>
           </div>
 
           <p>
             <label>
               <input class="with-gap" name="type" type="radio" value="income"
                 v-model="type" />
-              <span>Income</span>
+              <span>{{ 'Record_Income' | localize }}</span>
             </label>
           </p>
 
@@ -34,7 +34,7 @@
             <label>
               <input class="with-gap" name="type" type="radio" value="outcome"
                 v-model="type" />
-              <span>Outcome</span>
+              <span>{{ 'Record_Outcome' | localize }}</span>
             </label>
           </p>
 
@@ -42,11 +42,11 @@
             <input id="amount" type="number"
               v-model.number="amount"
               :class="{ invalid: $v.amount.$dirty && !$v.amount.minValue }" />
-            <label for="amount">The Amount</label>
+            <label for="amount">{{ 'Record_Amount' | localize }}</label>
             <span
               v-if="$v.amount.$dirty && !$v.amount.minValue"
               class="helper-text invalid"
-              >Minimum value {{ $v.amount.$params.minValue.min }}
+              >{{ 'Category_LimitError' | localize }} {{ $v.amount.$params.minValue.min }}
             </span>
           </div>
 
@@ -54,16 +54,16 @@
             <input id="description" type="text"
               v-model.trim="description"
               :class="{ invalid: $v.description.$dirty && !$v.description.required }" />
-            <label for="description">Description</label>
+            <label for="description">{{ 'Record_Description' | localize }}</label>
             <span
               v-if="$v.description.$dirty && !$v.description.required"
               class="helper-text invalid"
-              >Enter description
+              >{{ 'Record_DescriptionError' | localize }}
             </span>
           </div>
 
           <button class="btn waves-effect waves-light" type="submit">
-            Create
+            {{ 'Record_Create' | localize }}
             <i class="material-icons right">send</i>
           </button>
         </form>

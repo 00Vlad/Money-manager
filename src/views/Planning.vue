@@ -3,7 +3,7 @@
     <div class="app-page">
       <div>
         <div class="page-title">
-          <h3>Planning</h3>
+          <h3>{{ 'Planning' | localize }}</h3>
           <h4>{{ info.bill | currencyFilter('PLN') }}</h4>
         </div>
 
@@ -13,7 +13,7 @@
           <div v-for="cat of categories" :key="cat.id">
             <p>
               <strong>{{ cat.title }}:</strong>
-              {{ cat.spend | currencyFilter }} of {{ cat.limit | currencyFilter }}
+              {{ cat.spend | currencyFilter }} {{ 'Planning_Of' | localize }} {{ cat.limit | currencyFilter }}
             </p>
             <div class="progress" v-tooltip="cat.tooltip">
               <div class="determinate"

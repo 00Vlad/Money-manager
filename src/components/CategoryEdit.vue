@@ -10,7 +10,7 @@
           <select ref="select" v-model="current">
             <option v-for="c of categories" :key="c.id" :value="c.id">{{ c.title }}</option>
           </select>
-          <label>Choose category</label>
+          <label>{{ 'Category_ChooseCategory' | localize }}</label>
         </div>
 
         <div class="input-field">
@@ -20,11 +20,11 @@
             v-model="title"
             :class="{ invalid: $v.title.$dirty && !$v.title.required }"
           />
-          <label for="name">Title</label>
+          <label for="name">{{ 'Category_Title' | localize }}</label>
           <span
             v-if="$v.title.$dirty && !$v.title.required"
             class="helper-text invalid"
-          >Enter the title of category
+          >{{ 'Category_TitleError' | localize }}
           </span>
         </div>
 
@@ -35,16 +35,16 @@
             v-model.number="limit"
             :class="{ invalid: $v.limit.$dirty && !$v.limit.minValue }"
           />
-          <label for="limit">Limit</label>
+          <label for="limit">{{ 'Category_Limit' | localize }}</label>
           <span
             v-if="$v.limit.$dirty && !$v.limit.minValue"
             class="helper-text invalid"
-          >Minimum value {{ $v.limit.$params.minValue.min }}
+          >{{ 'Category_LimitError' | localize }} {{ $v.limit.$params.minValue.min }}
           </span>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">
-          Refresh
+          {{ 'Category_Refresh' | localize }}
           <i class="material-icons right">send</i>
         </button>
       </form>

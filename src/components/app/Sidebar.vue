@@ -14,15 +14,17 @@
 </template>
 
 <script>
+import localizeFilter from '@/filters/localize.filter'
+
 export default {
   props: ['value'],
   data: () => ({
     navbarLinks: [
-      { title: 'Cash account', path: '/', exact: true },
-      { title: 'History', path: '/history' },
-      { title: 'Planning', path: '/planning' },
-      { title: 'New record', path: '/record' },
-      { title: 'Categories', path: '/categories' }
+      { title: localizeFilter('Menu_Bill'), path: '/', exact: true },
+      { title: localizeFilter('Menu_History'), path: '/history' },
+      { title: localizeFilter('Menu_Planning'), path: '/planning' },
+      { title: localizeFilter('Menu_Record'), path: '/record' },
+      { title: localizeFilter('Menu_Category'), path: '/categories' }
     ]
   })
 }

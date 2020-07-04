@@ -3,7 +3,7 @@
     <div class="app-page">
       <div>
         <div class="page-title">
-          <h3>Cash Account</h3>
+          <h3>{{ 'Home' | localize }}</h3>
           <button class="btn waves-effect waves-light btn-small" @click="refresh">
             <i class="material-icons">refresh</i>
           </button>
