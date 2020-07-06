@@ -18,13 +18,13 @@
           <ul id="dropdown" class="dropdown-content">
             <li>
               <router-link to="/profile" class="black-text">
-                <i class="material-icons">account_circle</i>Profile
+                <i class="material-icons">account_circle</i>{{ 'Navbar_Profile' | localize }}
               </router-link>
             </li>
             <li class="divider" tabindex="-1"></li>
             <li>
               <a href="#" class="black-text" @click.prevent="logout">
-                <i class="material-icons">assignment_return</i>Log out
+                <i class="material-icons">assignment_return</i>{{ 'Navbar_LogOut' | localize }}
               </a>
             </li>
           </ul>

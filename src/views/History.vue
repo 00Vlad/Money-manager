@@ -22,8 +22,8 @@
             v-model="page"
             :page-count="pageCount"
             :click-handler="pageChangeHandler"
-            :prev-text="'Prev'"
-            :next-text="'Next'"
+            :prev-text="'History_PaginatePrev' | localize"
+            :next-text="'History_PaginateNext' | localize"
             :container-class="'pagination'"
             :page-class="'waves-effect'" />
         </section>
@@ -40,6 +40,11 @@ import { Pie } from 'vue-chartjs'
 
 export default {
   name: 'history',
+  metaInfo () {
+    return {
+      title: this.$title('Menu_History')
+    }
+  },
   extends: Pie,
   mixins: [paginationMixin],
   components: { HistoryTable },

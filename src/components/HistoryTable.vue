@@ -20,7 +20,7 @@
         <td>
           <span class="white-text badge"
                :class="[record.typeClass]">
-            {{ record.typeText }}
+            {{ recordType(record.typeText) | localize }}
           </span>
         </td>
         <td>
@@ -38,11 +38,18 @@
 </template>
 
 <script>
+//  import localizeFilter from '@/filters/localize.filter'
+
 export default {
   props: {
     records: {
       required: true,
       type: Array
+    }
+  },
+  methods: {
+    recordType (el) {
+      return el === 'Income' ? 'History_TypeIncome' : 'History_TypeOutcome'
     }
   }
 }
