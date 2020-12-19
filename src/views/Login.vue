@@ -3,36 +3,40 @@
     <div class="card-content">
       <span class="card-title">Home Accounting</span>
       <div class="input-field">
-        <input id="email" type="text"
-              v-model.trim="email"
-              :class="{invalid: ($v.email.$dirty && !$v.email.required) || ($v.email.$dirty && !$v.email.email)}"/>
+        <input
+          id="email"
+          type="text"
+          v-model.trim="email"
+          :class="{invalid: ($v.email.$dirty && !$v.email.required) || ($v.email.$dirty && !$v.email.email)}"
+        />
         <label for="email">Email</label>
 
-        <small class="helper-text invalid"
-              v-if="$v.email.$dirty && !$v.email.required">
-              Email field mustn't be empty
-        </small>
-        <small class="helper-text invalid"
-              v-else-if="$v.email.$dirty && !$v.email.email">
-              Enter valid email
-        </small>
-
+        <small
+          class="helper-text invalid"
+          v-if="$v.email.$dirty && !$v.email.required"
+        >Email field mustn't be empty</small>
+        <small
+          class="helper-text invalid"
+          v-else-if="$v.email.$dirty && !$v.email.email"
+        >Enter valid email</small>
       </div>
       <div class="input-field">
-        <input id="password" type="password"
-               v-model.trim="password"
-               :class="{invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength)}"/>
+        <input
+          id="password"
+          type="password"
+          v-model.trim="password"
+          :class="{invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength)}"
+        />
         <label for="password">Password</label>
 
-        <small class="helper-text invalid"
-               v-if="$v.password.$dirty && !$v.password.required">
-               Enter password
-        </small>
-        <small class="helper-text invalid"
-               v-if="$v.password.$dirty && !$v.password.minLength">
-               The password must contain at least {{$v.password.$params.minLength.min}} characters. Now it contains {{ password.length }} characters
-        </small>
-
+        <small
+          class="helper-text invalid"
+          v-if="$v.password.$dirty && !$v.password.required"
+        >Enter password</small>
+        <small
+          class="helper-text invalid"
+          v-if="$v.password.$dirty && !$v.password.minLength"
+        >The password must contain at least {{$v.password.$params.minLength.min}} characters. Now it contains {{ password.length }} characters</small>
       </div>
     </div>
     <div class="card-action">
@@ -65,13 +69,13 @@ export default {
     email: { email, required },
     password: { required, minLength: minLength(6) }
   },
-  mounted () {
+  mounted() {
     if (messages[this.$route.query.messages]) {
       this.$message(this.$route.query.messages)
     }
   },
   methods: {
-    async submitHandler () {
+    async submitHandler() {
       if (this.$v.$invalid) {
         this.$v.$touch()
         return

@@ -6,27 +6,31 @@
       </div>
       <form @submit.prevent="submitHandler">
         <div class="input-field">
-          <input id="name"
-                 type="text"
-                 v-model="title"
-                 :class="{ invalid: $v.title.$dirty && !$v.title.required }" />
+          <input
+            id="name"
+            type="text"
+            v-model="title"
+            :class="{ invalid: $v.title.$dirty && !$v.title.required }"
+          />
           <label for="name">{{ 'Category_Title' | localize }}</label>
-          <span v-if="$v.title.$dirty && !$v.title.required"
-                class="helper-text invalid">
-                {{ 'Category_TitleError' | localize }}
-          </span>
+          <span
+            v-if="$v.title.$dirty && !$v.title.required"
+            class="helper-text invalid"
+          >{{ 'Category_TitleError' | localize }}</span>
         </div>
 
         <div class="input-field">
-          <input id="limit"
-                 type="number"
-                 v-model.number="limit"
-                 :class="{ invalid: $v.limit.$dirty && !$v.limit.minValue }" />
+          <input
+            id="limit"
+            type="number"
+            v-model.number="limit"
+            :class="{ invalid: $v.limit.$dirty && !$v.limit.minValue }"
+          />
           <label for="limit">{{ 'Category_Limit' | localize }}</label>
-          <span v-if="$v.limit.$dirty && !$v.limit.minValue"
-                class="helper-text invalid">
-                {{ 'Category_LimitError' | localize }} {{ $v.limit.$params.minValue.min }}
-          </span>
+          <span
+            v-if="$v.limit.$dirty && !$v.limit.minValue"
+            class="helper-text invalid"
+          >{{ 'Category_LimitError' | localize }} {{ $v.limit.$params.minValue.min }}</span>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">
@@ -50,12 +54,12 @@ export default {
     title: { required },
     limit: { minValue: minValue(100) }
   },
-  mounted () {
+  mounted() {
     // eslint-disable-next-line no-undef
     M.updateTextFields()
   },
   methods: {
-    async submitHandler () {
+    async submitHandler() {
       if (this.$v.$invalid) {
         this.$v.$touch()
         return
