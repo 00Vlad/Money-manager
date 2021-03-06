@@ -1,4 +1,4 @@
-# task-manajer ( Vue.js )
+# Money manager
 
 ## Project setup
 ```
